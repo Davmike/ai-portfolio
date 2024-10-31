@@ -1,4 +1,5 @@
 import { MyContext } from "./Components/Context";
+import Menu from "./Components/Menu";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         value={{
         }}
       >
+        <Menu />
       </MyContext.Provider>
     </>
   );

@@ -12,8 +12,9 @@ function Header() {
                         <span>GPT</span>
                     </h1>
                 </div>
-                <div className="ml-auto">
+                <div className="flex items-center ml-auto gap-[50px]">
                     <button className="text-gray-400">SIGN IN</button>
+                    <img src="../public/assets/dots.png" className="w-[18px] h-[18px]" alt="" />
                 </div>
             </div>
         </header>

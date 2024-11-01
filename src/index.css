@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+header {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    background: #1E222C;
+}

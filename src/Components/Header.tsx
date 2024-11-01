@@ -2,10 +2,22 @@
 
 function Header() {
     return (
-        <div>
-
-        </div>
-    )
+        <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0">
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center mx-auto max-w-[800px] px-[20px]">
+                <div className="flex items-center space-x-2">
+                    <img src="../public/assets/gpt.png" className="w-8 h-8 rounded-full" alt="" />
+                    <h1 className="flex items-center space-x-1 text-[19px] font-semibold text-white">
+                        <em>DAVID'S</em>
+                        <strong className="text-[#c3bf4a]">RESUME</strong>
+                        <span>GPT</span>
+                    </h1>
+                </div>
+                <div className="ml-auto">
+                    <button className="text-gray-400">SIGN IN</button>
+                </div>
+            </div>
+        </header>
+    );
 }
 
-export default Header
+export default Header;

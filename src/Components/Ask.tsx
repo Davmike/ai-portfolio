@@ -6,7 +6,8 @@ function Ask() {
     const {
         isFocused,
         setIsFocused,
-        setIsHide
+        setIsHide,
+        setIsMessage
     }: any = context;
 
     const textareaRef = useRef<any>(null);
@@ -30,7 +31,7 @@ function Ask() {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
             />
-            <button className="ml-2 text-gray-400 hover:text-gray-300" onClick={() => setIsHide(true)}>
+            <button className="ml-2 text-gray-400 hover:text-gray-300" onClick={() => { setIsHide(true); setIsMessage(true); }}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

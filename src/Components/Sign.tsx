@@ -28,11 +28,11 @@ function Sign() {
                         To interact with the assistant, please sign-in using your Google or GitHub credentials.
                     </p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <button className="bg-[#333] text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200 flex items-center">
-                            <span className="font-semibold">GITHUB</span>
+                        <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center">
+                            <span className="font-semibold" id="acc">GITHUB</span>
                         </button>
-                        <button className="flex items-center px-4 py-2 text-white transition duration-200 bg-red-600 rounded-lg hover:bg-red-700">
-                            <span className="font-semibold">GOOGLE</span>
+                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]">
+                            <span className="font-semibold" id="acc">GOOGLE</span>
                         </button>
                     </div>
                     <p className="mt-4 text-[10px] text-center text-gray-500">

@@ -29,6 +29,29 @@ body {
     font-family: "Roboto Mono", monospace;
 }
 
-#login-text {
+#login-text,
+#acc {
     font-family: "Saira Condensed", sans-serif;
+}
+
+/* github button effect */
+
+#github {
+    box-shadow: 0 3px #28313F;
+}
+
+#github:hover {
+    box-shadow: 0 2px #28313F;
+    transform: translateY(1px);
+}
+
+/* gmail button effect */
+
+#gmail {
+    box-shadow: 0 3px #9A2F27;
+}
+
+#gmail:hover {
+    box-shadow: 0 2px #9A2F27;
+    transform: translateY(1px);
 }

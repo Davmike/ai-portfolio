@@ -1,0 +1,47 @@
+import { useContext } from "react";
+import { MyContext } from "./Context";
+
+function Sign() {
+    const context = useContext(MyContext);
+    const {
+        isSign,
+        setIsSign
+    }: any = context;
+
+    return (
+        !isSign && (
+            <div className="fixed inset-0 z-10 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsSign(!isSign)}></div>
+
+                <div className="bg-[#1E222C] text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 relative z-10">
+                    <button
+                        className="absolute text-gray-400 top-4 right-4 hover:text-white"
+                        onClick={() => setIsSign(!isSign)}
+                    >
+                        &times;
+                    </button>
+                    <h2 className="mb-2 text-xl font-semibold">LOGIN TO USE THE ASSISTANT</h2>
+                    <p className="mb-4 text-gray-400">
+                        I really appreciate your interest in this project.
+                    </p>
+                    <p className="pl-3 mb-6 text-gray-400 border-l-2 border-blue-500">
+                        To interact with the assistant, please sign-in using your Google or GitHub credentials.
+                    </p>
+                    <div className="flex justify-center gap-4 mt-6">
+                        <button className="bg-[#333] text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-700 transition duration-200 flex items-center">
+                            <span className="font-semibold">GITHUB</span>
+                        </button>
+                        <button className="flex items-center px-4 py-2 text-white transition duration-200 bg-red-600 rounded-lg hover:bg-red-700">
+                            <span className="font-semibold">GOOGLE</span>
+                        </button>
+                    </div>
+                    <p className="mt-4 text-xs text-center text-gray-500">
+                        Choose a sign-in method
+                    </p>
+                </div>
+            </div>
+        )
+    );
+}
+
+export default Sign;

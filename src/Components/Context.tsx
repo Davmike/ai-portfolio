@@ -7,6 +7,8 @@ interface ComponentsProps {
     setIsHide: (isHide: boolean) => void;
     isMessage: boolean;
     setIsMessage: (isMessage: boolean) => void;
+    isSign: boolean;
+    setIsSign: (isSign: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

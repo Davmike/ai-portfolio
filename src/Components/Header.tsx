@@ -1,6 +1,14 @@
+import { useContext } from "react";
+import { MyContext } from "./Context";
 
 
 function Header() {
+    const context = useContext(MyContext);
+    const {
+        setIsSign,
+        isSign
+    }: any = context;
+
     return (
         <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0">
             <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center mx-auto max-w-[800px] px-[20px]">
@@ -15,7 +23,7 @@ function Header() {
                 </div>
                 {/* Sign in button and text */}
                 <div className="flex items-center ml-auto gap-[50px]">
-                    <button className="text-gray-400">SIGN IN</button>
+                    <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>
                     <img src="../public/assets/dots.png" className="w-[18px] h-[18px]" alt="" />
                 </div>
             </div>

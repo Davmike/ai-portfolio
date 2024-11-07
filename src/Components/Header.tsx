@@ -42,9 +42,11 @@ function Header() {
                     </h1>
                 </div>
                 {/* Sign in button and text */}
-                <div className="flex items-center ml-auto gap-[50px]">
+                <div className="flex items-center ml-auto gap-[20px]">
                     {isSignedIn ? (
-                        <button className="text-gray-400" onClick={handleSignOut}>SIGN OUT</button>
+                        <><img src={localStorage.getItem("profilePic") ?? ""} alt="User Avatar" className="w-8 h-8 rounded-full" />
+                            <button className="text-gray-400" onClick={handleSignOut}>SIGN OUT</button>
+                        </>
                     ) : (
                         <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>
                     )}

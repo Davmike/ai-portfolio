@@ -9,6 +9,12 @@ interface ComponentsProps {
     setIsMessage: (isMessage: boolean) => void;
     isSign: boolean;
     setIsSign: (isSign: boolean) => void;
+    isSignedIn: boolean;
+    setIsSignedIn: (isSignedIn: boolean) => void;
+    profilePic: boolean;
+    setProfilePic: (profilePic: boolean) => void;
+    email: boolean;
+    setEmail: (email: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

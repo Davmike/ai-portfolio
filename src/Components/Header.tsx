@@ -1,13 +1,33 @@
 import { useContext } from "react";
 import { MyContext } from "./Context";
+import { signOut } from "firebase/auth";
+import { auth } from "./Firebase";
+
 
 
 function Header() {
     const context = useContext(MyContext);
     const {
         setIsSign,
-        isSign
+        isSign,
+        isSignedIn,
+        setIsSignedIn
     }: any = context;
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+                // როდესაც წარმატებით გამოვიდეთ, გავაუქმოთ isSignedIn სტეიტი
+                setIsSignedIn(false);
+                // ასევე შეგიძლიათ სხვა მონაცემები წაშალოთ, თუ გსურთ
+                localStorage.removeItem("name");
+                localStorage.removeItem("email");
+                localStorage.removeItem("profilePic");
+            })
+            .catch((error) => {
+                console.error("Error signing out: ", error);
+            });
+    };
 
     return (
         <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0">
@@ -23,7 +43,11 @@ function Header() {
                 </div>
                 {/* Sign in button and text */}
                 <div className="flex items-center ml-auto gap-[50px]">
-                    <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>
+                    {isSignedIn ? (
+                        <button className="text-gray-400" onClick={handleSignOut}>SIGN OUT</button>
+                    ) : (
+                        <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>
+                    )}
                     <img src="../public/assets/dots.png" className="w-[18px] h-[18px]" alt="" />
                 </div>
             </div>

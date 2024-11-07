@@ -5,6 +5,7 @@ import Ask from "./Components/Ask";
 import { useState } from "react";
 // import Message from "./Components/Message";
 import Sign from "./Components/Sign";
+// import Profile from "./Components/Profile";
 
 function App() {
   // this is state which i use in ask compnent to make input background show and hide on cursor click
@@ -15,6 +16,10 @@ function App() {
   const [isMessage, setIsMessage] = useState<boolean>(false);
   // this state show and hide sign up component
   const [isSign, setIsSign] = useState<boolean>(true);
+
+  const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
+  const [profilePic, setProfilePic] = useState<any>(null);
+  const [email, setEmail] = useState<any>(null);
 
   return (
     <div className="flex justify-center min-h-screen">
@@ -27,12 +32,19 @@ function App() {
           isMessage,
           setIsMessage,
           isSign,
-          setIsSign
+          setIsSign,
+          isSignedIn,
+          setIsSignedIn,
+          profilePic,
+          setProfilePic,
+          email,
+          setEmail
         }}>
         <Header />
         <About />
         <Ask />
         <Sign />
+        {/* <Profile /> */}
         {/* <Message /> */}
       </MyContext.Provider>
     </div>

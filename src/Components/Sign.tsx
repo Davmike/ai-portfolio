@@ -1,13 +1,40 @@
 import { useContext } from "react";
 import { MyContext } from "./Context";
 import { signInWithGoogle } from "./Firebase"
+import { useEffect } from "react";
 
 function Sign() {
     const context = useContext(MyContext);
     const {
         isSign,
-        setIsSign
+        setIsSign,
+        setProfilePic,
+        setEmail,
+        setIsSignedIn
     }: any = context;
+
+    useEffect(() => {
+        const storedProfilePic = localStorage.getItem("profilePic");
+        const storedEmail = localStorage.getItem("email");
+
+        if (storedProfilePic && storedEmail) {
+            setProfilePic(storedProfilePic);
+            setEmail(storedEmail);
+            setIsSignedIn(true);
+        }
+    }, []);
+
+    const handleSignIn = () => {
+        signInWithGoogle()
+            .then((user) => {
+                setProfilePic(user.profilePic);
+                setEmail(user.email);
+                setIsSignedIn(true);
+            })
+            .catch((error) => {
+                console.error("Error during sign-in: ", error);
+            });
+    };
 
     return (
         !isSign && (
@@ -32,7 +59,7 @@ function Sign() {
                         <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center">
                             <span className="font-semibold" id="acc">GITHUB</span>
                         </button>
-                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]" onClick={signInWithGoogle}>
+                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]" onClick={handleSignIn}>
                             <span className="font-semibold" id="acc">GOOGLE</span>
                         </button>
                     </div>

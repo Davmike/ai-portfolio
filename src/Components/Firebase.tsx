@@ -1,9 +1,9 @@
-// Import the functions you need from the SDKs you need
+// Firebase.js - Firebase ინტეგრაცია
+
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
 
-// Your web app's Firebase configuration
+// Firebase კონფიგურაცია
 const firebaseConfig = {
     apiKey: "AIzaSyC_wGZQQTlvgyg4krsOKg32tOMg9GYnfgk",
     authDomain: "ai-portfolio-affbc.firebaseapp.com",
@@ -13,23 +13,28 @@ const firebaseConfig = {
     appId: "1:939288623406:web:1f5366e51798614144a2bf"
 };
 
-// Initialize Firebase
+// Firebase ინიციალიზაცია
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
-const provider = new GoogleAuthProvider()
-
+// Google რეგისტრაციის ფუნქცია
 export const signInWithGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {
-        const name = result.user.displayName;
-        const email = result.user.email;
-        const profilePic = result.user.photoURL;
+    return signInWithPopup(auth, provider)
+        .then((result) => {
+            const name = result.user.displayName;
+            const email = result.user.email;
+            const profilePic = result.user.photoURL;
 
-        localStorage.setItem("name", name ?? "");
-        localStorage.setItem("email", email ?? "");
-        localStorage.setItem("profilePic", profilePic ?? "");
+            // მონაცემების შენახვა LocalStorage-ში
+            localStorage.setItem("name", name ?? "");
+            localStorage.setItem("email", email ?? "");
+            localStorage.setItem("profilePic", profilePic ?? "");
 
-    }).catch((error) => {
-        console.log(error);
-    });
+            return { name, email, profilePic };
+        })
+        .catch((error) => {
+            console.error("Error during sign-in: ", error);
+            throw error;
+        });
 };

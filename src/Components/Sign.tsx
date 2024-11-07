@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "./Context";
+import { signInWithGoogle } from "./Firebase"
 
 function Sign() {
     const context = useContext(MyContext);
@@ -31,7 +32,7 @@ function Sign() {
                         <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center">
                             <span className="font-semibold" id="acc">GITHUB</span>
                         </button>
-                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]">
+                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]" onClick={signInWithGoogle}>
                             <span className="font-semibold" id="acc">GOOGLE</span>
                         </button>
                     </div>

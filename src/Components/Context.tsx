@@ -17,6 +17,8 @@ interface ComponentsProps {
     setEmail: (email: boolean) => void;
     isSignOut: boolean;
     setIsSignOut: (isSignOut: boolean) => void;
+    isProfile: boolean;
+    setIsProfile: (isProfile: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

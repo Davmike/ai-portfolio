@@ -5,7 +5,7 @@ import Ask from "./Components/Ask";
 import { useState } from "react";
 // import Message from "./Components/Message";
 import Sign from "./Components/Sign";
-// import Profile from "./Components/Profile";
+import Profile from "./Components/Profile";
 import SignOut from "./Components/SignOut";
 
 function App() {
@@ -19,6 +19,8 @@ function App() {
   const [isSign, setIsSign] = useState<boolean>(true);
   // this state show and hide sign out component
   const [isSignOut, setIsSignOut] = useState<boolean>(true);
+  // show and hide profile components
+  const [isProfile, setIsProfile] = useState<boolean>(true);
 
   const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
   const [profilePic, setProfilePic] = useState<any>(null);
@@ -43,14 +45,16 @@ function App() {
           email,
           setEmail,
           isSignOut,
-          setIsSignOut
+          setIsSignOut,
+          isProfile,
+          setIsProfile
         }}>
         <Header />
         <About />
         <Ask />
         <Sign />
         <SignOut />
-        {/* <Profile /> */}
+        <Profile />
         {/* <Message /> */}
       </MyContext.Provider>
     </div>

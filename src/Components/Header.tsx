@@ -8,7 +8,9 @@ function Header() {
         isSign,
         isSignedIn,
         isSignOut,
-        setIsSignOut
+        setIsSignOut,
+        isProfile,
+        setIsProfile
     }: any = context;
 
     return (
@@ -32,7 +34,9 @@ function Header() {
                     ) : (
                         <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>
                     )}
-                    <img src="../public/assets/dots.png" className="w-[18px] h-[18px]" alt="" />
+                    <img src="../public/assets/dots.png" onClick={() => {
+                        setIsProfile(!isProfile)
+                    }} className="w-[18px] h-[18px]" alt="" />
                 </div>
             </div>
         </header>

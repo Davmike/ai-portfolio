@@ -35,14 +35,14 @@ function SignOut() {
             <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsSignOut(!isSignOut)}></div>
 
-                <div className="bg-[#1E222C] text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 relative z-10">
+                <div className="bg-[#1E222C] bottom-0 text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 absolute z-10">
                     <button
                         className="absolute text-gray-400 top-4 right-4 hover:text-white"
                         onClick={() => setIsSignOut(!isSignOut)}
                     >
                         &times;
                     </button>
-                    <h2 className="mb-2 text-[18px] font-semibold" id="login-text">LOG OUT TO RETURN TO THE LOGIN</h2>
+                    <h3 className="mb-2 text-[18px] font-semibold" id="login-text">ARE YOU SURE TO LOG OUT?</h3>
                     <p className="mb-4 text-gray-400 text-[11px]">
                         We're sad to see you leave our website
                     </p>

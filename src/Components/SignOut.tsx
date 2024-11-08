@@ -12,6 +12,7 @@ function SignOut() {
         setIsSignedIn
     }: any = context;
 
+    // this function work to cancel sign in
     const handleSignOut = () => {
         signOut(auth)
             .then(() => {
@@ -19,6 +20,8 @@ function SignOut() {
                 localStorage.removeItem("name");
                 localStorage.removeItem("email");
                 localStorage.removeItem("profilePic");
+                // this state work for hide signout component
+                setIsSignOut(!isSignOut);
             })
             .catch((error) => {
                 console.error("Error signing out: ", error);

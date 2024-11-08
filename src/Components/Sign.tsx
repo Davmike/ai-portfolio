@@ -13,6 +13,8 @@ function Sign() {
         setIsSignedIn
     }: any = context;
 
+    // work to get images and other user infos from localstorage
+
     useEffect(() => {
         const storedProfilePic = localStorage.getItem("profilePic");
         const storedEmail = localStorage.getItem("email");
@@ -24,12 +26,16 @@ function Sign() {
         }
     }, []);
 
+    // this function work to sign in
+
     const handleSignIn = () => {
         signInWithGoogle()
             .then((user) => {
                 setProfilePic(user.profilePic);
                 setEmail(user.email);
                 setIsSignedIn(true);
+                // this state work for hide signin component
+                setIsSign(!isSign);
             })
             .catch((error) => {
                 console.error("Error during sign-in: ", error);

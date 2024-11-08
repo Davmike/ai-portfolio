@@ -1,9 +1,5 @@
 import { useContext } from "react";
 import { MyContext } from "./Context";
-import { signOut } from "firebase/auth";
-import { auth } from "./Firebase";
-
-
 
 function Header() {
     const context = useContext(MyContext);
@@ -11,23 +7,9 @@ function Header() {
         setIsSign,
         isSign,
         isSignedIn,
-        setIsSignedIn
+        isSignOut,
+        setIsSignOut
     }: any = context;
-
-    const handleSignOut = () => {
-        signOut(auth)
-            .then(() => {
-                // როდესაც წარმატებით გამოვიდეთ, გავაუქმოთ isSignedIn სტეიტი
-                setIsSignedIn(false);
-                // ასევე შეგიძლიათ სხვა მონაცემები წაშალოთ, თუ გსურთ
-                localStorage.removeItem("name");
-                localStorage.removeItem("email");
-                localStorage.removeItem("profilePic");
-            })
-            .catch((error) => {
-                console.error("Error signing out: ", error);
-            });
-    };
 
     return (
         <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0">
@@ -45,7 +27,7 @@ function Header() {
                 <div className="flex items-center ml-auto gap-[20px]">
                     {isSignedIn ? (
                         <><img src={localStorage.getItem("profilePic") ?? ""} alt="User Avatar" className="w-8 h-8 rounded-full" />
-                            <button className="text-gray-400" onClick={handleSignOut}>SIGN OUT</button>
+                            <button className="text-gray-400" onClick={() => setIsSignOut(!isSignOut)}>SIGN OUT</button>
                         </>
                     ) : (
                         <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>

@@ -35,7 +35,9 @@ function Sign() {
                 setEmail(user.email);
                 setIsSignedIn(true);
                 // this state work for hide signin component
-                setIsSign(!isSign);
+                setTimeout(() => {
+                    setIsSign(!isSign);
+                }, 600);
             })
             .catch((error) => {
                 console.error("Error during sign-in: ", error);

@@ -21,7 +21,9 @@ function SignOut() {
                 localStorage.removeItem("email");
                 localStorage.removeItem("profilePic");
                 // this state work for hide signout component
-                setIsSignOut(!isSignOut);
+                setTimeout(() => {
+                    setIsSignOut(!isSignOut);
+                }, 600);
             })
             .catch((error) => {
                 console.error("Error signing out: ", error);

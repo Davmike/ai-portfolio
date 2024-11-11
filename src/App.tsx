@@ -21,9 +21,11 @@ function App() {
   const [isSignOut, setIsSignOut] = useState<boolean>(true);
   // show and hide profile components
   const [isProfile, setIsProfile] = useState<boolean>(true);
-
+  // this state is check if signedin
   const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
+  // this state get from localstorage user image
   const [profilePic, setProfilePic] = useState<any>(null);
+  // this state get from localstorage user email
   const [email, setEmail] = useState<any>(null);
 
   return (

@@ -12,7 +12,7 @@ function Profile() {
             <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]"></div>
 
-                <div className="bg-[#1E222C] bottom-0 text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 absolute z-10">
+                <div className="bg-[#1E222C] bottom-0 text-white rounded-lg shadow-lg w-[480px] h-[500px] max-w-[90%] p-6 absolute z-10">
                     <button
                         className="absolute text-gray-400 top-4 right-4 hover:text-white"
                     >
@@ -23,35 +23,45 @@ function Profile() {
                         <img src="../public/assets/gpt.png" className="w-6 h-6 rounded-full" alt="" />
                         <h3 className="text-[18px] font-semibold" id="login-text">DAVID'S RESUME GPT</h3>
                     </div>
-                    <p className="mb-4 mt-1 text-gray-400 text-[11px] pl-4 space-y-4 border-b border-gray-700">
-                        We're sad to see you leave our website
+                    <p className="mb-6 mt-1 text-[#7f7f7f] text-[11px] pb-[24px] space-y-4 border-b-[0.5px] border-[#484848]">
+                        Signed as {" "}
+                        <b className="font-bold">{localStorage.getItem("email") ?? ""}</b>
                     </p>
                     {/* Menu List */}
-                    <ul className="pl-4 space-y-4 border-l border-gray-700">
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out cursor-pointer hover:text-white">
-                            <span className="mr-2 material-icons">autorenew</span>
-                            <span className="text-[15px]">RESTART CONVERSATION</span>
+                    <ul className="space-y-1">
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
+                            <button className="profile-btn hover:text-white">
+                                <span>RESTART CONVERSATION</span>
+                            </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out cursor-pointer hover:text-white">
-                            <span className="mr-2 material-icons">cloud_upload</span>
-                            <span className="text-[15px]">UPLOAD YOUR CV</span>
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
+                            <button className="profile-btn hover:text-white">
+                                <span>UPLOAD YOUR CV</span>
+                            </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out cursor-pointer hover:text-white">
-                            <span className="mr-2 material-icons">credit_card</span>
-                            <span className="text-[15px]">GET CREDITS</span>
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
+                            <button className="profile-btn hover:text-white">
+                                <span>GET CREDITS</span>
+                            </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out cursor-pointer hover:text-white">
-                            <span className="mr-2 material-icons">feedback</span>
-                            <span className="text-[15px]">FEEDBACK</span>
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
+                            <button className="profile-btn hover:text-white">
+                                <span>FEEDBACK</span>
+                            </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out cursor-pointer hover:text-white">
-                            <span className="mr-2 material-icons">info</span>
-                            <span className="text-[15px]">GPT DISCLAIMER</span>
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
+                            <button className="profile-btn hover:text-white">
+                                <span>GPT DISCLAIMER</span>
+                            </button>
                         </li>
                     </ul>
-                    <p className="mt-4 text-[10px] text-center text-gray-500">
-                        Don't Leave me :(
-                    </p>
+                    {/* logout button */}
+                    <div className="flex items-center justify-end px-[16px]">
+                        <button className="flex items-center justify-end gap-1 text-[#4a4a4a] text-[11px] font-bold mt-[30px] hover:text-[white] logout-btn">
+                            <img className="w-[13px] h-[13px] " src="./public/assets/sign-out.png" alt="" />
+                            <span>LOGOUT</span>
+                        </button>
+                    </div>
                 </div>
             </div>)
     );

@@ -30,7 +30,8 @@ body {
 }
 
 #login-text,
-#acc {
+#acc,
+.logout-btn {
     font-family: "Saira Condensed", sans-serif;
 }
 
@@ -54,4 +55,30 @@ body {
 #gmail:hover {
     box-shadow: 0 2px #9A2F27;
     transform: translateY(1px);
+}
+
+.profile-btn {
+    align-items: center;
+    background-color: #0000001a;
+    border-left: #7f7f7f;
+    color: #7f7f7f;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: space-between;
+    padding: var(--unit-v) var(--unit-h);
+    text-transform: uppercase;
+    transition: color .2s ease-out, border .2s ease-out;
+    width: 100%;
+    padding: 20px 16px 20px 16px;
+}
+
+.logout-btn:hover img {
+    filter: brightness(0) saturate(100%) invert(100%);
+    transition: filter 0.2s ease-out;
+}
+
+.logout-btn {
+    transition: color 0.1s ease-out;
 }

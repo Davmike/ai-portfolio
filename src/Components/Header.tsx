@@ -7,8 +7,6 @@ function Header() {
         setIsSign,
         isSign,
         isSignedIn,
-        isSignOut,
-        setIsSignOut,
         isProfile,
         setIsProfile
     }: any = context;
@@ -28,15 +26,22 @@ function Header() {
                 {/* Sign in button and text */}
                 <div className="flex items-center ml-auto gap-[20px]">
                     {isSignedIn ? (
-                        <><img src={localStorage.getItem("profilePic") ?? ""} alt="User Avatar" className="w-8 h-8 rounded-full" />
-                            <button className="text-gray-400" onClick={() => setIsSignOut(!isSignOut)}>SIGN OUT</button>
+                        <><img src="./public/assets/profile.png" alt="User Avatar" className="w-5 h-5 rounded-full" onClick={() => {
+                            setIsProfile(!isProfile)
+                        }} />
                         </>
                     ) : (
-                        <button className="text-gray-400" onClick={() => setIsSign(!isSign)}>SIGN IN</button>
+                        <>
+                            <div className="flex items-center gap-1 cursor-pointer" onClick={() => setIsSign(!isSign)}>
+                                <img src="./public/assets/sign-in.png" alt="sign in img" className="w-4 h-4" />
+                                <button className="text-white" >SIGN IN</button>
+                            </div>
+                            <img src="../public/assets/dots.png" onClick={() => {
+                                setIsProfile(!isProfile)
+                            }} className="w-[18px] h-[18px] cursor-pointer" alt="" />
+                        </>
                     )}
-                    <img src="../public/assets/dots.png" onClick={() => {
-                        setIsProfile(!isProfile)
-                    }} className="w-[18px] h-[18px]" alt="" />
+
                 </div>
             </div>
         </header>

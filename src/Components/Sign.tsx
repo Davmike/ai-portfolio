@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { MyContext } from "./Context";
 import { signInWithGoogle } from "./Firebase"
+import { signInWithGithub } from "./Firebase";
 import { useEffect } from "react";
 
 function Sign() {
@@ -8,32 +9,54 @@ function Sign() {
     const {
         isSign,
         setIsSign,
-        setProfilePic,
         setEmail,
-        setIsSignedIn
+        setIsSignedInGoogle,
+        setUserName,
+        setIsSignedInGithub
     }: any = context;
 
-    // work to get images and other user infos from localstorage
-
+    // work to get user infos from localstorage for google auth
     useEffect(() => {
-        const storedProfilePic = localStorage.getItem("profilePic");
         const storedEmail = localStorage.getItem("email");
 
-        if (storedProfilePic && storedEmail) {
-            setProfilePic(storedProfilePic);
+        if (storedEmail) {
             setEmail(storedEmail);
-            setIsSignedIn(true);
+            setIsSignedInGoogle(true);
         }
     }, []);
 
-    // this function work to sign in
-
-    const handleSignIn = () => {
+    // this function work to sign in with google
+    const handleSignInGoogle = () => {
         signInWithGoogle()
             .then((user) => {
-                setProfilePic(user.profilePic);
                 setEmail(user.email);
-                setIsSignedIn(true);
+                setIsSignedInGoogle(true);
+                // this state work for hide signin component
+                setTimeout(() => {
+                    setIsSign(!isSign);
+                }, 600);
+            })
+            .catch((error) => {
+                console.error("Error during sign-in: ", error);
+            });
+    };
+
+    // work to get user infos from localstorage for github auth
+    useEffect(() => {
+        const storedEmail = localStorage.getItem("email");
+
+        if (storedEmail) {
+            setUserName(storedEmail);
+            setIsSignedInGithub(true);
+        }
+    }, []);
+
+    // this function work to sign in with github
+    const handleSignInGithub = () => {
+        signInWithGithub()
+            .then((user) => {
+                setUserName(user.name);
+                setIsSignedInGithub(true);
                 // this state work for hide signin component
                 setTimeout(() => {
                     setIsSign(!isSign);
@@ -64,10 +87,10 @@ function Sign() {
                         To interact with the assistant, please sign-in using your Google or GitHub credentials.
                     </p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center">
+                        <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center" onClick={handleSignInGithub}>
                             <span className="font-semibold" id="acc">GITHUB</span>
                         </button>
-                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]" onClick={handleSignIn}>
+                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]" onClick={handleSignInGoogle}>
                             <span className="font-semibold" id="acc">GOOGLE</span>
                         </button>
                     </div>

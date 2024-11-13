@@ -22,12 +22,15 @@ function App() {
   // show and hide profile components
   const [isProfile, setIsProfile] = useState<boolean>(true);
 
-  // this state is check if signedin
-  const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
-  // this state get from localstorage user image
-  const [profilePic, setProfilePic] = useState<any>(null);
-  // this state get from localstorage user email
+  // this state is check if signedin google
+  const [isSignedInGoogle, setIsSignedInGoogle] = useState<boolean>(false);
+  // this state get from localstorage user email google
   const [email, setEmail] = useState<any>(null);
+
+  // this state is check if signedin github
+  const [isSignedInGithub, setIsSignedInGithub] = useState<boolean>(false);
+  // this state get from localstorage user name github
+  const [userName, setUserName] = useState<any>(null);
 
   return (
     <div className="flex justify-center min-h-screen">
@@ -41,16 +44,19 @@ function App() {
           setIsMessage,
           isSign,
           setIsSign,
-          isSignedIn,
-          setIsSignedIn,
-          profilePic,
-          setProfilePic,
+          isSignedInGoogle,
+          setIsSignedInGoogle,
           email,
           setEmail,
           isSignOut,
           setIsSignOut,
           isProfile,
-          setIsProfile
+          setIsProfile,
+          isSignedInGithub,
+          setIsSignedInGithub,
+          userName,
+          setUserName
+
         }}>
         <Header />
         <About />

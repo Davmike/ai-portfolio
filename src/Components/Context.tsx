@@ -9,16 +9,18 @@ interface ComponentsProps {
     setIsMessage: (isMessage: boolean) => void;
     isSign: boolean;
     setIsSign: (isSign: boolean) => void;
-    isSignedIn: boolean;
-    setIsSignedIn: (isSignedIn: boolean) => void;
-    profilePic: boolean;
-    setProfilePic: (profilePic: boolean) => void;
+    isSignedInGoogle: boolean;
+    setIsSignedInGoogle: (isSignedIn: boolean) => void;
     email: boolean;
     setEmail: (email: boolean) => void;
     isSignOut: boolean;
     setIsSignOut: (isSignOut: boolean) => void;
     isProfile: boolean;
     setIsProfile: (isProfile: boolean) => void;
+    isSignedInGithub: boolean;
+    setIsSignedInGithub: (isSignedInGithub: boolean) => void;
+    userName: boolean;
+    setUserName: (userName: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

@@ -1,7 +1,7 @@
 // Firebase.js - Firebase ინტეგრაცია
 
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
 // Firebase კონფიგურაცია
 const firebaseConfig = {
@@ -17,24 +17,39 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 // Google რეგისტრაციის ფუნქცია
 export const signInWithGoogle = () => {
     return signInWithPopup(auth, provider)
         .then((result) => {
-            const name = result.user.displayName;
             const email = result.user.email;
-            const profilePic = result.user.photoURL;
-
             // მონაცემების შენახვა LocalStorage-ში
-            localStorage.setItem("name", name ?? "");
             localStorage.setItem("email", email ?? "");
-            localStorage.setItem("profilePic", profilePic ?? "");
 
-            return { name, email, profilePic };
+            return { email };
         })
         .catch((error) => {
             console.error("Error during sign-in: ", error);
+            throw error;
+        });
+};
+
+
+
+// Github რეგისტრაციის ფუნქცია
+export const signInWithGithub = () => {
+    return signInWithPopup(auth, githubProvider)
+        .then((result) => {
+            const name = result.user.displayName;
+
+            // მონაცემების შენახვა LocalStorage-ში
+            localStorage.setItem("name", name ?? "");
+
+            return { name };
+        })
+        .catch((error) => {
+            console.error("Error during GitHub sign-in: ", error);
             throw error;
         });
 };

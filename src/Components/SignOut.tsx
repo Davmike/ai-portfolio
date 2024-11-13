@@ -9,17 +9,18 @@ function SignOut() {
     const {
         isSignOut,
         setIsSignOut,
-        setIsSignedIn
+        setIsSignedInGoogle,
+        setIsSignedInGithub
     }: any = context;
 
     // this function work to cancel sign in
     const handleSignOut = () => {
         signOut(auth)
             .then(() => {
-                setIsSignedIn(false);
-                localStorage.removeItem("name");
+                setIsSignedInGoogle(false);
+                setIsSignedInGithub(false);
+                localStorage.removeItem("displayName");
                 localStorage.removeItem("email");
-                localStorage.removeItem("profilePic");
                 // this state work for hide signout component
                 setTimeout(() => {
                     setIsSignOut(!isSignOut);

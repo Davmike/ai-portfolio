@@ -41,12 +41,12 @@ export const signInWithGoogle = () => {
 export const signInWithGithub = () => {
     return signInWithPopup(auth, githubProvider)
         .then((result) => {
-            const name = result.user.displayName;
+            const displayName = result.user.displayName;
 
             // მონაცემების შენახვა LocalStorage-ში
-            localStorage.setItem("name", name ?? "");
+            localStorage.setItem("displayName", displayName ?? "");
 
-            return { name };
+            return { displayName };
         })
         .catch((error) => {
             console.error("Error during GitHub sign-in: ", error);

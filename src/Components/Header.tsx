@@ -6,7 +6,8 @@ function Header() {
     const {
         setIsSign,
         isSign,
-        isSignedIn,
+        isSignedInGoogle,
+        isSignedInGithub,
         isProfile,
         setIsProfile
     }: any = context;
@@ -25,7 +26,7 @@ function Header() {
                 </div>
                 {/* Sign in button and text */}
                 <div className="flex items-center ml-auto gap-[20px]">
-                    {isSignedIn ? (
+                    {isSignedInGoogle || isSignedInGithub ? (
                         <><img src="./public/assets/profile.png" alt="User Avatar" className="w-5 h-5 rounded-full" onClick={() => {
                             setIsProfile(!isProfile)
                         }} />

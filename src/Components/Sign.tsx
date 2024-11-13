@@ -43,10 +43,10 @@ function Sign() {
 
     // work to get user infos from localstorage for github auth
     useEffect(() => {
-        const storedEmail = localStorage.getItem("email");
+        const storedGithub = localStorage.getItem("displayName");
 
-        if (storedEmail) {
-            setUserName(storedEmail);
+        if (storedGithub) {
+            setUserName(storedGithub);
             setIsSignedInGithub(true);
         }
     }, []);
@@ -55,7 +55,7 @@ function Sign() {
     const handleSignInGithub = () => {
         signInWithGithub()
             .then((user) => {
-                setUserName(user.name);
+                setUserName(user.displayName);
                 setIsSignedInGithub(true);
                 // this state work for hide signin component
                 setTimeout(() => {

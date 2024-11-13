@@ -6,7 +6,8 @@ function Profile() {
     const {
         isProfile,
         setIsProfile,
-        isSignedIn,
+        isSignedInGoogle,
+        isSignedInGithub,
         setIsSignOut,
         isSignOut,
         setIsSign,
@@ -30,16 +31,21 @@ function Profile() {
                         <h3 className="text-[18px] font-semibold" id="login-text">DAVID'S RESUME GPT</h3>
                     </div>
                     {/* signed or not text */}
-                    {isSignedIn ? (
+                    {(isSignedInGoogle || isSignedInGithub) ? (
                         <p className="mb-6 mt-1 text-[#7f7f7f] text-[11px] pb-[24px] space-y-4 border-b-[0.5px] border-[#484848]">
                             Signed as {" "}
-                            <b className="font-bold">{localStorage.getItem("email") ?? ""}</b>
+                            <b className="font-bold">
+                                {isSignedInGoogle
+                                    ? localStorage.getItem("email") ?? ""
+                                    : localStorage.getItem("displayName") ?? ""}
+                            </b>
                         </p>
                     ) : (
                         <p className="mb-6 mt-1 text-[#7f7f7f] text-[11px] pb-[24px] space-y-4 border-b-[0.5px] border-[#484848]">
                             Please sign in to use my resume
                         </p>
                     )}
+
                     {/* Menu List */}
                     < ul className="space-y-1">
                         <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
@@ -67,7 +73,7 @@ function Profile() {
                             </button>
                         </li>
 
-                        {isSignedIn ? (
+                        {isSignedInGoogle || isSignedInGithub ? (
                             <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
                                 setIsSignOut(!isSignOut);
                                 setTimeout(() => {

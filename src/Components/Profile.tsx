@@ -11,7 +11,8 @@ function Profile() {
         setIsSignOut,
         isSignOut,
         setIsSign,
-        isSign
+        isSign,
+        setIsSocial
     }: any = context;
 
     return (
@@ -66,7 +67,11 @@ function Profile() {
                                 <span>SEND ME EMAIL</span>
                             </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
+                            setIsSocial(false); setTimeout(() => {
+                                setIsProfile(!isProfile);
+                            }, 200);
+                        }}>
                             <button className="profile-btn hover:text-white">
                                 <img className="w-[16px] h-[16px] " src="./public/assets/social.png" alt="" />
                                 <span>GET MY SOCIAL</span>
@@ -108,7 +113,8 @@ function Profile() {
                         </button>
                     </div> */}
                 </div>
-            </div >)
+            </div >
+        )
     );
 }
 

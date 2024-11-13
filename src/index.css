@@ -57,6 +57,47 @@ body {
     transform: translateY(1px);
 }
 
+/* instagram button effect */
+#instagram {
+    box-shadow: 0 3px #c82843;
+}
+
+#instagram:hover {
+    box-shadow: 0 2px #c82843;
+    transform: translateY(1px);
+}
+
+/* linkedin button effect */
+#linkedin {
+    box-shadow: 0 3px #0a4fbe;
+}
+
+#linkedin:hover {
+    box-shadow: 0 2px #0a4fbe;
+    transform: translateY(1px);
+}
+
+/* twitter button effect */
+#twitter {
+    box-shadow: 0 3px #303030;
+}
+
+#twitter:hover {
+    box-shadow: 0 2px #303030;
+    transform: translateY(1px);
+}
+
+/* portfolio button effect */
+#portfolio {
+    box-shadow: 0 3px #085d27;
+}
+
+#portfolio:hover {
+    box-shadow: 0 2px #085d27;
+    transform: translateY(1px);
+}
+
+
 .profile-btn {
     align-items: center;
     background-color: #0000001a;

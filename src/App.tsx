@@ -7,6 +7,7 @@ import { useState } from "react";
 import Sign from "./Components/Sign";
 import Profile from "./Components/Profile";
 import SignOut from "./Components/SignOut";
+import Social from "./Components/Social";
 
 function App() {
   // this is state which i use in ask compnent to make input background show and hide on cursor click
@@ -21,6 +22,8 @@ function App() {
   const [isSignOut, setIsSignOut] = useState<boolean>(true);
   // show and hide profile components
   const [isProfile, setIsProfile] = useState<boolean>(true);
+  // hide and show social components
+  const [isSocial, setIsSocial] = useState<boolean>(false);
 
   // this state is check if signedin google
   const [isSignedInGoogle, setIsSignedInGoogle] = useState<boolean>(false);
@@ -55,7 +58,9 @@ function App() {
           isSignedInGithub,
           setIsSignedInGithub,
           userName,
-          setUserName
+          setUserName,
+          isSocial,
+          setIsSocial
 
         }}>
         <Header />
@@ -64,6 +69,7 @@ function App() {
         <Sign />
         <SignOut />
         <Profile />
+        <Social />
         {/* <Message /> */}
       </MyContext.Provider>
     </div>

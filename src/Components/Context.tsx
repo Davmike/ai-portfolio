@@ -21,6 +21,8 @@ interface ComponentsProps {
     setIsSignedInGithub: (isSignedInGithub: boolean) => void;
     userName: boolean;
     setUserName: (userName: boolean) => void;
+    isSocial: boolean;
+    setIsSocial: (isSocial: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

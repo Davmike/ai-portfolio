@@ -61,14 +61,24 @@ function Profile() {
                         </li>
 
                         {isSignedIn ? (
-                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => setIsSignOut(!isSignOut)}>
+                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
+                                setIsSignOut(!isSignOut);
+                                setTimeout(() => {
+                                    setIsProfile(!isProfile);
+                                }, 200);
+                            }}>
                                 <button className="profile-btn hover:text-white">
                                     <img className="w-[16px] h-[16px] " src="./public/assets/logout-new.png" alt="" />
                                     <span>LOGOUT</span>
                                 </button>
                             </li>
                         ) : (
-                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => setIsSign(!isSign)}>
+                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
+                                setIsSign(!isSign);
+                                setTimeout(() => {
+                                    setIsProfile(!isProfile);
+                                }, 200);
+                            }}>
                                 <button className="profile-btn hover:text-white">
                                     <img className="w-[16px] h-[16px] " src="./public/assets/logout-new.png" alt="" />
                                     <span>SIGN-IN</span>
@@ -84,7 +94,7 @@ function Profile() {
                         </button>
                     </div> */}
                 </div>
-            </div>)
+            </div >)
     );
 }
 

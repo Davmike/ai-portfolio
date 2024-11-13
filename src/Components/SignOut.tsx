@@ -35,7 +35,7 @@ function SignOut() {
             <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsSignOut(!isSignOut)}></div>
 
-                <div className="bg-[#1E222C] bottom-0 text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 absolute z-10">
+                <div className="bg-[#1E222C] text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 absolute z-10">
                     <button
                         className="absolute text-gray-400 top-4 right-4 hover:text-white"
                         onClick={() => setIsSignOut(!isSignOut)}

@@ -75,9 +75,9 @@ function Social() {
                             )
                         })}
                     </div>
-                    <p className="mt-4 text-[10px] text-center text-gray-500">
+                    {/* <p className="mt-4 text-[10px] text-center text-gray-500">
                         Choose a sign-in method
-                    </p>
+                    </p> */}
                 </div>
             </div>
         )

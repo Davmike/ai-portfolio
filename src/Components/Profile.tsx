@@ -29,12 +29,19 @@ function Profile() {
                         <img src="../public/assets/gpt.png" className="w-6 h-6 rounded-full" alt="" />
                         <h3 className="text-[18px] font-semibold" id="login-text">DAVID'S RESUME GPT</h3>
                     </div>
-                    <p className="mb-6 mt-1 text-[#7f7f7f] text-[11px] pb-[24px] space-y-4 border-b-[0.5px] border-[#484848]">
-                        Signed as {" "}
-                        <b className="font-bold">{localStorage.getItem("email") ?? ""}</b>
-                    </p>
+                    {/* signed or not text */}
+                    {isSignedIn ? (
+                        <p className="mb-6 mt-1 text-[#7f7f7f] text-[11px] pb-[24px] space-y-4 border-b-[0.5px] border-[#484848]">
+                            Signed as {" "}
+                            <b className="font-bold">{localStorage.getItem("email") ?? ""}</b>
+                        </p>
+                    ) : (
+                        <p className="mb-6 mt-1 text-[#7f7f7f] text-[11px] pb-[24px] space-y-4 border-b-[0.5px] border-[#484848]">
+                            Please sign in to use my resume
+                        </p>
+                    )}
                     {/* Menu List */}
-                    <ul className="space-y-1">
+                    < ul className="space-y-1">
                         <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
                             <button className="profile-btn hover:text-white">
                                 <img className="w-[16px] h-[16px] " src="./public/assets/restart.png" alt="" />
@@ -78,7 +85,8 @@ function Profile() {
                                 setTimeout(() => {
                                     setIsProfile(!isProfile);
                                 }, 200);
-                            }}>
+                            }}
+                            >
                                 <button className="profile-btn hover:text-white">
                                     <img className="w-[16px] h-[16px] " src="./public/assets/logout-new.png" alt="" />
                                     <span>SIGN-IN</span>

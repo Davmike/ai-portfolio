@@ -23,6 +23,8 @@ interface ComponentsProps {
     setUserName: (userName: boolean) => void;
     isSocial: boolean;
     setIsSocial: (isSocial: boolean) => void;
+    isEmail: boolean;
+    setIsEmail: (isEmail: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

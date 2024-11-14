@@ -8,6 +8,7 @@ import Sign from "./Components/Sign";
 import Profile from "./Components/Profile";
 import SignOut from "./Components/SignOut";
 import Social from "./Components/Social";
+import Email from "./Components/Email";
 
 function App() {
   // this is state which i use in ask compnent to make input background show and hide on cursor click
@@ -23,7 +24,9 @@ function App() {
   // show and hide profile components
   const [isProfile, setIsProfile] = useState<boolean>(true);
   // hide and show social components
-  const [isSocial, setIsSocial] = useState<boolean>(false);
+  const [isSocial, setIsSocial] = useState<boolean>(true);
+  // hide and show Email components
+  const [isEmail, setIsEmail] = useState<boolean>(true);
 
   // this state is check if signedin google
   const [isSignedInGoogle, setIsSignedInGoogle] = useState<boolean>(false);
@@ -60,7 +63,9 @@ function App() {
           userName,
           setUserName,
           isSocial,
-          setIsSocial
+          setIsSocial,
+          isEmail,
+          setIsEmail
 
         }}>
         <Header />
@@ -70,6 +75,7 @@ function App() {
         <SignOut />
         <Profile />
         <Social />
+        <Email />
         {/* <Message /> */}
       </MyContext.Provider>
     </div>

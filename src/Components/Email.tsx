@@ -99,12 +99,11 @@ function Email() {
                         &times;
                     </button>
                     <h2 className="mb-2 text-[18px] font-semibold uppercase" id="login-text">GET IN TOUCH!</h2>
-
-                    <p className="pl-3 mb-6 text-gray-400 border-l-2 border-blue-500 text-[12px]">
+                    <p className="pl-3 mb-6 text-gray-400 border-l-2 border-[#F04D40] text-[12px]">
                         I’m thrilled that you’re interested in connecting with me on social media!
                     </p>
 
-
+                    {/* validation and inputs form */}
                     <form ref={form} onSubmit={sendEmail}>
                         {/* name input */}
                         <div className="mb-4">
@@ -177,9 +176,6 @@ function Email() {
                             SUBMIT
                         </button>
                     </form>
-                    {/* <p className="mt-4 text-[10px] text-center text-gray-500">
-                Choose a sign-in method
-            </p> */}
                 </div>
             </div>
         )

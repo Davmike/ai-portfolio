@@ -9,6 +9,7 @@ import Profile from "./Components/Profile";
 import SignOut from "./Components/SignOut";
 import Social from "./Components/Social";
 import Email from "./Components/Email";
+import Submit from "./Components/Submit";
 
 function App() {
   // this is state which i use in ask compnent to make input background show and hide on cursor click
@@ -43,6 +44,7 @@ function App() {
   const [validEmail, setValidEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+  const [successMessage, setSuccessMessage] = useState<boolean>(true); // State for success message
 
   return (
     <div className="flex justify-center min-h-screen">
@@ -80,6 +82,8 @@ function App() {
           setMessage,
           isButtonDisabled,
           setIsButtonDisabled,
+          successMessage,
+          setSuccessMessage
         }}>
         <Header />
         <About />
@@ -89,6 +93,7 @@ function App() {
         <Profile />
         <Social />
         <Email />
+        <Submit />
         {/* <Message /> */}
       </MyContext.Provider>
     </div>

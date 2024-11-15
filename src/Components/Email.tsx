@@ -16,10 +16,10 @@ function Email() {
         setMessage,
         isButtonDisabled,
         setIsButtonDisabled,
+        setSuccessMessage,
     }: any = context;
 
     const [errors, setErrors] = useState({ name: "", email: "", message: "" });
-    const [successMessage, setSuccessMessage] = useState(""); // State for success message
 
     const form = useRef<HTMLFormElement>(null);
 
@@ -59,18 +59,12 @@ function Email() {
                     .sendForm("service_p5qllw9", "template_v3z9d9f", form.current, "eqogUB61J7lo2Ci_S")
                     .then(
                         () => {
-                            console.log("SUCCESS!");
-                            setSuccessMessage("YOUR MESSAGE HAS BEEN SENT SUCCESSFULLY."); // Set success message
+                            setSuccessMessage(false)
                             // Clear input fields
                             setName('');
                             setValidEmail('');
                             setMessage('');
                             setErrors({ name: "", email: "", message: "" }); // Clear errors on success
-
-                            // Clear success message after 5 seconds
-                            setTimeout(() => {
-                                setSuccessMessage(""); // Clear the success message
-                            }, 5000);
                         },
                         (error) => {
                             console.log("FAILED...", error.text);
@@ -183,10 +177,6 @@ function Email() {
                             SUBMIT
                         </button>
                     </form>
-
-                    {successMessage && (
-                        <p className="mt-6 text-center text-green-500">{successMessage}</p>
-                    )}
                     {/* <p className="mt-4 text-[10px] text-center text-gray-500">
                 Choose a sign-in method
             </p> */}

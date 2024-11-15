@@ -38,6 +38,12 @@ function App() {
   // this state get from localstorage user name github
   const [userName, setUserName] = useState<any>(null);
 
+  // for validation states
+  const [name, setName] = useState<string>("");
+  const [validEmail, setValidEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+
   return (
     <div className="flex justify-center min-h-screen">
       <MyContext.Provider
@@ -65,8 +71,15 @@ function App() {
           isSocial,
           setIsSocial,
           isEmail,
-          setIsEmail
-
+          setIsEmail,
+          name,
+          setName,
+          validEmail,
+          setValidEmail,
+          message,
+          setMessage,
+          isButtonDisabled,
+          setIsButtonDisabled,
         }}>
         <Header />
         <About />

@@ -25,6 +25,14 @@ interface ComponentsProps {
     setIsSocial: (isSocial: boolean) => void;
     isEmail: boolean;
     setIsEmail: (isEmail: boolean) => void;
+    name: string;
+    setName: (name: string) => void;
+    validEmail: string;
+    setValidEmail: (validEmail: string) => void;
+    message: string;
+    setMessage: (message: string) => void;
+    isButtonDisabled: boolean;
+    setIsButtonDisabled: (isButtonDisabled: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

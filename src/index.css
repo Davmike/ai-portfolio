@@ -120,3 +120,7 @@ body {
     filter: brightness(0) saturate(100%) invert(100%);
 
 }
+
+#emailvalidation, #emailvalidation::placeholder{
+    font-family: "Courier Prime", monospace;
+}

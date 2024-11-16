@@ -13,7 +13,7 @@ function Header() {
     }: any = context;
 
     return (
-        <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0">
+        <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0 z-10">
             <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center mx-auto max-w-[800px] px-[20px]">
                 {/* David's GPT Logo Text Section */}
                 <div className="flex items-center space-x-2">

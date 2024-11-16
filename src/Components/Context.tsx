@@ -35,6 +35,10 @@ interface ComponentsProps {
     setIsButtonDisabled: (isButtonDisabled: boolean) => void;
     successMessage: boolean;
     setSuccessMessage: (successMessage: boolean) => void;
+    newMessage: string;
+    setNewMessage: (newMessage: string) => void;
+    messages: any;
+    setMessages: (messages: any) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

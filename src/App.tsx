@@ -46,6 +46,14 @@ function App() {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
   const [successMessage, setSuccessMessage] = useState<boolean>(true); // State for success message
 
+  // this state sand message
+  const [newMessage, setNewMessage] = useState<string>("");
+  // this state have test messages
+  const [messages, setMessages] = useState<any>([
+    { id: 1, text: "გამარჯობა!", sender: "bot" },
+    { id: 2, text: "გამარჯობა! როგორ ხარ?", sender: "user" }
+  ]);
+
   return (
     <div className="flex justify-center min-h-screen">
       <MyContext.Provider
@@ -83,7 +91,11 @@ function App() {
           isButtonDisabled,
           setIsButtonDisabled,
           successMessage,
-          setSuccessMessage
+          setSuccessMessage,
+          newMessage,
+          setNewMessage,
+          messages,
+          setMessages
         }}>
         <Header />
         <About />

@@ -72,15 +72,19 @@ function Ask() {
         textarea.style.height = `${Math.min(textarea.scrollHeight, 294)}px`;
     };
 
-    const handleKeyPress = (e: {
-        shiftKey: any;
-        preventDefault(): unknown; key: string
-    }) => {
+    const handleKeyPress = (e: { shiftKey: any; preventDefault(): unknown; key: string }) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
-            handleSendMessage();
+            if (isSignedInGoogle || isSignedInGithub) {
+                handleSendMessage();
+                setIsMessage(true);
+                setIsHide(true);
+            } else {
+                setIsSign(!isSign);
+            }
         }
     };
+
 
     return (
         <div className="absolute top-[6.5%] flex flex-col w-full max-w-[800px]">

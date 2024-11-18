@@ -5,7 +5,7 @@ function Message() {
     const context = useContext(MyContext);
     const {
         newMessage,
-        setNewMessage
+        setNewMessage,
     }: any = context;
 
     const [messages, setMessages] = useState([

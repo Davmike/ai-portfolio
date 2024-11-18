@@ -37,8 +37,10 @@ interface ComponentsProps {
     setSuccessMessage: (successMessage: boolean) => void;
     newMessage: string;
     setNewMessage: (newMessage: string) => void;
-    messages: any;
-    setMessages: (messages: any) => void;
+    // messages: any;
+    // setMessages: (messages: any) => void;
+    isChatVisible: boolean;
+    setIsChatVisible: (isChatVisible: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

@@ -13,7 +13,9 @@ function Ask() {
         isSign,
         setIsSign,
         isSignedInGoogle,
-        isSignedInGithub
+        isSignedInGithub,
+        isChatVisible,
+        setIsChatVisible
     }: any = context;
 
     const [messages, setMessages] = useState([
@@ -37,6 +39,9 @@ function Ask() {
     // Chat message handling logic
     const handleSendMessage = () => {
         if (newMessage.trim()) {
+            if (!isChatVisible) {
+                setIsChatVisible(true);
+            }
             setMessages([
                 ...messages,
                 {
@@ -89,24 +94,26 @@ function Ask() {
     return (
         <div className="absolute top-[6.5%] flex flex-col w-full max-w-[800px]">
             {/* Chat display */}
-            <div className="flex-1 p-4 overflow-x-hidden overflow-y-auto"
-                style={{ maxHeight: '79.2vh' }}>
-                {messages.map((message) => (
-                    <div
-                        key={message.id}
-                        className={`mb-2 ${message.sender === 'user' ? 'text-right' : ''}`}
-                    >
+            {isChatVisible && (
+                <div className="flex-1 p-4 overflow-x-hidden overflow-y-auto"
+                    style={{ maxHeight: '79.2vh' }}>
+                    {messages.map((message) => (
                         <div
-                            className={`p-2 rounded-lg inline-block ${message.sender === 'user' ? 'bg-blue-200' : 'bg-green-200'
-                                }`}
+                            key={message.id}
+                            className={`mb-2 ${message.sender === 'user' ? 'text-right' : ''}`}
                         >
-                            <p className='text-left' style={{ wordWrap: "break-word", whiteSpace: "pre-wrap", wordBreak: 'break-all' }}>{message.text}</p>
+                            <div
+                                className={`p-2 rounded-lg inline-block ${message.sender === 'user' ? 'bg-blue-200' : 'bg-green-200'
+                                    }`}
+                            >
+                                <p className='text-left' style={{ wordWrap: "break-word", whiteSpace: "pre-wrap", wordBreak: 'break-all' }}>{message.text}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
-                {/* Scroll anchor */}
-                <div ref={messagesEndRef} />
-            </div>
+                    ))}
+                    {/* Scroll anchor */}
+                    <div ref={messagesEndRef} />
+                </div>
+            )}
 
             {/* Input Section */}
             <div

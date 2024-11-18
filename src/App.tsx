@@ -48,11 +48,15 @@ function App() {
 
   // this state sand message
   const [newMessage, setNewMessage] = useState<string>("");
+
+  //this state test if message can be send show chat or not
+  const [isChatVisible, setIsChatVisible] = useState<boolean>(false);
+
   // this state have test messages
-  const [messages, setMessages] = useState<any>([
-    { id: 1, text: "გამარჯობა!", sender: "bot" },
-    { id: 2, text: "გამარჯობა! როგორ ხარ?", sender: "user" }
-  ]);
+  // const [messages, setMessages] = useState<any>([
+  //   { id: 1, text: "გამარჯობა!", sender: "bot" },
+  //   { id: 2, text: "გამარჯობა! როგორ ხარ?", sender: "user" }
+  // ]);
 
   return (
     <div className="flex justify-center min-h-screen">
@@ -94,8 +98,11 @@ function App() {
           setSuccessMessage,
           newMessage,
           setNewMessage,
-          messages,
-          setMessages
+          isChatVisible,
+          setIsChatVisible
+
+          // messages,
+          // setMessages
         }}>
         <Header />
         <About />

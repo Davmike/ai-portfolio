@@ -115,7 +115,8 @@ function Ask() {
                     className="flex-1 text-gray-300 placeholder-gray-500 bg-transparent outline-none resize-none m-[20px] pt-[20px] h-auto max-h-[294px] overflow-y-auto"
                     value={newMessage}
                     onInput={(e) => {
-                        setNewMessage(e.target.value);
+                        const target = e.target as HTMLTextAreaElement;
+                        setNewMessage(target.value);
                         handleInput();
                     }}
                     onKeyPress={handleKeyPress}

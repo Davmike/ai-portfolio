@@ -19,6 +19,15 @@ function Email() {
         setSuccessMessage,
     }: any = context;
 
+    // textarea size controler
+    const EmailtextareaRef = useRef<any>(null);
+
+    const handleInputEmail = () => {
+        const emailTextarea = EmailtextareaRef.current;
+        emailTextarea.style.height = 'auto';
+        emailTextarea.style.height = `${Math.min(emailTextarea.scrollHeight, 294)}px`;
+    };
+
     const [errors, setErrors] = useState({ name: "", email: "", message: "" });
 
     const form = useRef<HTMLFormElement>(null);
@@ -153,12 +162,16 @@ function Email() {
                                 Message
                             </label>
                             <textarea
+                                ref={EmailtextareaRef}
                                 name="message"
                                 id="message"
                                 placeholder="What you want to say?"
-                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black h-32 focus:outline-none focus:ring-2 ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
+                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black h-32 focus:outline-none focus:ring-2 resize-none ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
                                     }`}
                                 value={message}
+                                onInput={() => {
+                                    handleInputEmail();
+                                }}
                                 onChange={(e) => {
                                     setMessage(e.target.value);
                                     if (errors.message) setErrors({ ...errors, message: "" });

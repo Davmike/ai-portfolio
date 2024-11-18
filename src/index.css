@@ -127,7 +127,7 @@ body {
 
 
 /* texte typing styles */
-@keyframes typing {
+/* @keyframes typing {
     0% { width: 0; }
     100% { width: 100%; }
 }
@@ -137,4 +137,4 @@ body {
     white-space: nowrap;
     width: 0;
     animation: typing 3s steps(30) 1s forwards;
-}
+} */

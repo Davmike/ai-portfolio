@@ -30,7 +30,7 @@ function Profile() {
                     </button>
                     {/* this is david resume name and logo */}
                     <div className="flex items-center space-x-2">
-                        <img src="../public/assets/gpt.png" className="w-6 h-6 rounded-full" alt="" />
+                        <img src="/assets/gpt.png" className="w-6 h-6 rounded-full" alt="" />
                         <h3 className="text-[18px] font-semibold" id="login-text">DAVID'S RESUME GPT</h3>
                     </div>
                     {/* signed or not text */}
@@ -53,13 +53,13 @@ function Profile() {
                     < ul className="space-y-1">
                         <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
                             <button className="profile-btn hover:text-white">
-                                <img className="w-[16px] h-[16px] " src="./public/assets/restart.png" alt="" />
+                                <img className="w-[16px] h-[16px] " src="/assets/restart.png" alt="" />
                                 <span>RESTART CONVERSATION</span>
                             </button>
                         </li>
                         <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
                             <button className="profile-btn hover:text-white">
-                                <img className="w-[16px] h-[16px] " src="./public/assets/resume.png" alt="" />
+                                <img className="w-[16px] h-[16px] " src="/assets/resume.png" alt="" />
                                 <span>DOWNLOAD MY CV</span>
                             </button>
                         </li>
@@ -70,7 +70,7 @@ function Profile() {
                                 }, 200);
                             }}>
                             <button className="profile-btn hover:text-white">
-                                <img className="w-[16px] h-[16px] " src="./public/assets/gmail.png" alt="" />
+                                <img className="w-[16px] h-[16px] " src="/assets/gmail.png" alt="" />
                                 <span>SEND ME EMAIL</span>
                             </button>
                         </li>
@@ -80,7 +80,7 @@ function Profile() {
                             }, 200);
                         }}>
                             <button className="profile-btn hover:text-white">
-                                <img className="w-[16px] h-[16px] " src="./public/assets/social.png" alt="" />
+                                <img className="w-[16px] h-[16px] " src="/assets/social.png" alt="" />
                                 <span>GET MY SOCIAL</span>
                             </button>
                         </li>
@@ -93,7 +93,7 @@ function Profile() {
                                 }, 200);
                             }}>
                                 <button className="profile-btn hover:text-white">
-                                    <img className="w-[16px] h-[16px] " src="./public/assets/logout-new.png" alt="" />
+                                    <img className="w-[16px] h-[16px] " src="/assets/logout-new.png" alt="" />
                                     <span>LOGOUT</span>
                                 </button>
                             </li>
@@ -106,7 +106,7 @@ function Profile() {
                             }}
                             >
                                 <button className="profile-btn hover:text-white">
-                                    <img className="w-[16px] h-[16px] " src="./public/assets/logout-new.png" alt="" />
+                                    <img className="w-[16px] h-[16px] " src="/assets/logout-new.png" alt="" />
                                     <span>SIGN-IN</span>
                                 </button>
                             </li>
@@ -115,7 +115,7 @@ function Profile() {
                     {/* logout button */}
                     {/* <div className="flex items-center justify-end px-[16px]">
                         <button className="flex items-center justify-end gap-1 text-[#4a4a4a] text-[11px] font-bold mt-[30px] hover:text-[white] logout-btn">
-                            <img className="w-[13px] h-[13px] " src="./public/assets/sign-out.png" alt="" />
+                            <img className="w-[13px] h-[13px] " src="/assets/sign-out.png" alt="" />
                             <span>LOGOUT</span>
                         </button>
                     </div> */}

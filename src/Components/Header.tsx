@@ -27,7 +27,7 @@ function Header() {
                 {/* Sign in button and text */}
                 <div className="flex items-center ml-auto gap-[20px]">
                     {isSignedInGoogle || isSignedInGithub ? (
-                        <><img src="./public/assets/profile.png" alt="User Avatar" className="w-5 h-5 rounded-full" onClick={() => {
+                        <><img src="/assets/profile.png" alt="User Avatar" className="w-5 h-5 rounded-full" onClick={() => {
                             setIsProfile(!isProfile)
                         }} />
                         </>
@@ -37,7 +37,7 @@ function Header() {
                                 <img src="/assets/sign-in.png" alt="sign in img" className="w-4 h-4" />
                                 <button className="text-white" >SIGN IN</button>
                             </div>
-                            <img src="../public/assets/dots.png" onClick={() => {
+                            <img src="/assets/dots.png" onClick={() => {
                                 setIsProfile(!isProfile)
                             }} className="w-[18px] h-[18px] cursor-pointer" alt="" />
                         </>

@@ -34,7 +34,7 @@ function Header() {
                     ) : (
                         <>
                             <div className="flex items-center gap-1 cursor-pointer" onClick={() => setIsSign(!isSign)}>
-                                <img src="./public/assets/sign-in.png" alt="sign in img" className="w-4 h-4" />
+                                <img src="/assets/sign-in.png" alt="sign in img" className="w-4 h-4" />
                                 <button className="text-white" >SIGN IN</button>
                             </div>
                             <img src="../public/assets/dots.png" onClick={() => {

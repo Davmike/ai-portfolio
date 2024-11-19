@@ -18,10 +18,14 @@ function Ask() {
         setIsChatVisible
     }: any = context;
 
-    const [messages, setMessages] = useState([
-        { id: 1, text: "გამარჯობა!", sender: "bot" },
-        { id: 2, text: "გამარჯობა! როგორ ხარ?", sender: "user" }
-    ]);
+    type Message = {
+        id: number;
+        text: string;
+        sender: "user" | "bot";
+    };
+
+    const [messages, setMessages] = useState<Message[]>([]);
+
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const textareaRef = useRef<any>(null);
@@ -95,7 +99,7 @@ function Ask() {
         <div className="absolute top-[6.5%] flex flex-col w-full max-w-[800px]">
             {/* Chat display */}
             {isChatVisible && (
-                <div className="flex-1 p-4 overflow-x-hidden overflow-y-auto"
+                <div className="flex-1 p-4 mt-2 overflow-x-hidden overflow-y-auto"
                     style={{ maxHeight: '79.2vh' }}>
                     {messages.map((message) => (
                         <div

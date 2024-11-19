@@ -66,7 +66,7 @@ function Social() {
                     <p className="pl-3 mb-6 text-gray-400 border-l-2 border-blue-500 text-[12px]">
                         I’m thrilled that you’re interested in connecting with me on social media!
                     </p>
-                    <div className="flex justify-center gap-4 mt-6">
+                    <div className="flex justify-center gap-1 mt-6 md:gap-4">
                         {categories.map((category, index) => {
                             return (
                                 <a key={index} href={category.link} target="_blank" id={category.id} style={{ backgroundColor: category.color }} className="text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[50px] transition duration-200 flex items-center">

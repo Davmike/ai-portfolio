@@ -107,7 +107,7 @@ function Ask() {
                         >
                             {message.sender === 'bot' && (
                                 <img
-                                    src="./public/assets/gpt.png" // ბოტის სურათის მისამართი
+                                    src="/assets/gpt.png"
                                     alt="Bot"
                                     className="w-8 h-8 mr-2 rounded-full"
                                 />
@@ -131,7 +131,7 @@ function Ask() {
                             </div>
                             {message.sender === 'user' && (
                                 <img
-                                    src="./public/assets/gpt.png" // მომხმარებლის სურათის მისამართი
+                                    src="/assets/gpt.png"
                                     alt="User"
                                     className="w-8 h-8 ml-2 rounded-full"
                                 />

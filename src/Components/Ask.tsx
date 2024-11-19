@@ -99,19 +99,43 @@ function Ask() {
         <div className="absolute top-[6.5%] flex flex-col w-full max-w-[800px]">
             {/* Chat display */}
             {isChatVisible && (
-                <div className="flex-1 p-4 mt-2 overflow-x-hidden overflow-y-auto"
-                    style={{ maxHeight: '79.2vh' }}>
+                <div className="flex-1 p-4 mt-2 overflow-x-hidden overflow-y-auto" style={{ maxHeight: '79.2vh' }}>
                     {messages.map((message) => (
                         <div
                             key={message.id}
-                            className={`mb-2 ${message.sender === 'user' ? 'text-right' : ''}`}
+                            className={`flex items-start mb-4 ${message.sender === 'user' ? 'justify-end' : ''}`}
                         >
+                            {message.sender === 'bot' && (
+                                <img
+                                    src="./public/assets/gpt.png" // ბოტის სურათის მისამართი
+                                    alt="Bot"
+                                    className="w-8 h-8 mr-2 rounded-full"
+                                />
+                            )}
                             <div
-                                className={`p-2 rounded-lg inline-block ${message.sender === 'user' ? 'bg-blue-200' : 'bg-green-200'
+                                className={`p-4 rounded-xl max-w-xs ${message.sender === 'user' ? 'bg-[#1B1F28] text-right' : 'bg-[#171921] text-left'
                                     }`}
+                                style={{
+                                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                }}
                             >
-                                <p className='text-left' style={{ wordWrap: "break-word", whiteSpace: "pre-wrap", wordBreak: 'break-all' }}>{message.text}</p>
+                                <p className='text-[#BABABA] text-[12px]'
+                                    style={{
+                                        wordWrap: 'break-word',
+                                        whiteSpace: 'pre-wrap',
+                                        wordBreak: 'break-word',
+                                    }}
+                                >
+                                    {message.text}
+                                </p>
                             </div>
+                            {message.sender === 'user' && (
+                                <img
+                                    src="./public/assets/gpt.png" // მომხმარებლის სურათის მისამართი
+                                    alt="User"
+                                    className="w-8 h-8 ml-2 rounded-full"
+                                />
+                            )}
                         </div>
                     ))}
                     {/* Scroll anchor */}

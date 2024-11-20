@@ -70,7 +70,7 @@ function Ask() {
 
             // Reset textarea height after sending the message
             if (textareaRef.current) {
-                textareaRef.current.style.height = 'auto';  // Reset height
+                textareaRef.current.style.height = 'auto';
             }
         }
     };

@@ -52,6 +52,7 @@ function App() {
 
   //this state test if message can be send show chat or not
   const [isChatVisible, setIsChatVisible] = useState<boolean>(false);
+  const [hovered, setHovered] = useState<boolean>(false); // State to track if cursor is hovering
 
   // this state have test messages
   // const [messages, setMessages] = useState<any>([
@@ -100,7 +101,9 @@ function App() {
           newMessage,
           setNewMessage,
           isChatVisible,
-          setIsChatVisible
+          setIsChatVisible,
+          hovered,
+          setHovered
 
           // messages,
           // setMessages

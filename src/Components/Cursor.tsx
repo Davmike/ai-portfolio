@@ -1,6 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { MyContext } from "./Context";
 
 const Cursor = () => {
+    const context = useContext(MyContext);
+    const {
+        hovered,
+
+    }: any = context;
+
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
@@ -14,7 +21,8 @@ const Cursor = () => {
 
     return (
         <div
-            className="fixed z-10 w-12 h-12 transition-transform duration-300 ease-in-out bg-transparent border border-gray-500 rounded-full opacity-50 pointer-events-none hover:scale-110"
+            className={`fixed z-10 transition-transform duration-300 ease-in-out bg-transparent border border-gray-500 rounded-full opacity-50 pointer-events-none ${hovered ? "w-[70px] h-[70px]" : "w-[50px] h-[50px]"
+                }`}
             style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,

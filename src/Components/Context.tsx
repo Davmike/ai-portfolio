@@ -41,6 +41,9 @@ interface ComponentsProps {
     // setMessages: (messages: any) => void;
     isChatVisible: boolean;
     setIsChatVisible: (isChatVisible: boolean) => void;
+    hovered: boolean;
+    setHovered: (isChatVisible: boolean) => void;
+
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

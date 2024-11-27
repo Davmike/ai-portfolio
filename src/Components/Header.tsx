@@ -9,14 +9,19 @@ function Header() {
         isSignedInGoogle,
         isSignedInGithub,
         isProfile,
-        setIsProfile
+        setIsProfile,
+        setHovered
     }: any = context;
 
     return (
         <header className="bg-[#13141B] h-[64px] w-full absolute top-0 bottom-0 right-0 left-0 z-10">
             <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center mx-auto max-w-[800px] px-[20px]">
                 {/* David's GPT Logo Text Section */}
-                <div className="flex items-center p-2 space-x-2 transition-all duration-200 border border-transparent rounded hover-effect" onClick={() => window.location.reload()}>
+                <div
+                    className="flex items-center p-2 space-x-2 transition-all duration-200 border border-transparent rounded"
+                    onMouseEnter={() => setHovered(true)} // When cursor enters this element
+                    onMouseLeave={() => setHovered(false)} // When cursor leaves this element
+                >
                     <img src="/assets/gpt.png" className="w-8 h-8 rounded-full" alt="" />
                     <h1 className="flex items-center space-x-1 text-[19px] font-semibold text-white">
                         <em>DAVID'S</em>
@@ -24,6 +29,7 @@ function Header() {
                         <span>GPT</span>
                     </h1>
                 </div>
+
                 {/* Sign in button and text */}
                 <div className="flex items-center ml-auto gap-[20px]">
                     {isSignedInGoogle || isSignedInGithub ? (

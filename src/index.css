@@ -15,6 +15,7 @@ header {
 
 body {
     background: #1E222C;
+    cursor: none;
 }
 
 #about {
@@ -138,3 +139,42 @@ body {
     width: 0;
     animation: typing 3s steps(30) 1s forwards;
 } */
+
+/* this down below styles work for border hover animation */
+
+.hover-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    transition: all 0.1s ease-in-out;
+}
+
+.hover-effect:hover::before {
+    animation: border-animation 0.5s linear forwards;
+    border-color: rgba(255, 255, 255, 0.554)
+}
+
+/* Keyframes for border animation */
+@keyframes border-animation {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    25% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    }
+    75% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}

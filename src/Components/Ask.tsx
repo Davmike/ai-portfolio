@@ -151,7 +151,7 @@ function Ask() {
                 <textarea
                     ref={textareaRef}
                     placeholder="Ask any career-related questions..."
-                    className="flex-1 text-gray-300 placeholder-gray-500 bg-transparent outline-none resize-none m-[20px] pt-[20px] h-auto max-h-[294px] overflow-y-auto"
+                    className="flex-1 text-gray-300 placeholder-gray-500 bg-transparent outline-none resize-none m-[20px] pt-[20px] h-auto max-h-[294px] overflow-y-auto cursor-none"
                     value={newMessage}
                     onInput={(e) => {
                         const target = e.target as HTMLTextAreaElement;
@@ -163,7 +163,7 @@ function Ask() {
                     onBlur={() => setIsFocused(false)}
                 />
                 <button
-                    className="ml-2 text-gray-400 hover:text-gray-300"
+                    className="ml-2 text-gray-400 hover:text-gray-300 cursor-none"
                     onClick={() => {
                         if (isSignedInGoogle || isSignedInGithub) {
                             handleSendMessage();

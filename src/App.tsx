@@ -10,6 +10,7 @@ import SignOut from "./Components/SignOut";
 import Social from "./Components/Social";
 import Email from "./Components/Email";
 import Submit from "./Components/Submit";
+import Cursor from "./Components/Cursor";
 
 function App() {
   // this is state which i use in ask compnent to make input background show and hide on cursor click
@@ -113,6 +114,7 @@ function App() {
         <Social />
         <Email />
         <Submit />
+        <Cursor />
         {/* <Message /> */}
       </MyContext.Provider>
     </div>

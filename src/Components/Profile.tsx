@@ -24,7 +24,7 @@ function Profile() {
 
                 <div className="bg-[#1E222C] bottom-0 text-white rounded-t-lg shadow-lg w-[480px] h-[460px] max-w-[90%] p-6 absolute z-10">
                     <button
-                        className="absolute text-gray-400 top-4 right-4 hover:text-white"
+                        className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
                         onClick={() => setIsProfile(!isProfile)}>
                         &times;
                     </button>
@@ -51,61 +51,61 @@ function Profile() {
 
                     {/* Menu List */}
                     < ul className="space-y-1">
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
-                            <button className="profile-btn hover:text-white">
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white" onClick={() => window.location.reload()}>
+                            <button className="profile-btn hover:text-white cursor-none">
                                 <img className="w-[16px] h-[16px] " src="/assets/restart.png" alt="" />
                                 <span>RESTART CONVERSATION</span>
                             </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white">
-                            <button className="profile-btn hover:text-white">
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white">
+                            <button className="profile-btn hover:text-white cursor-none">
                                 <img className="w-[16px] h-[16px] " src="/assets/resume.png" alt="" />
                                 <span>DOWNLOAD MY CV</span>
                             </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white"
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white"
                             onClick={() => {
                                 setIsEmail(!isEmail); setTimeout(() => {
                                     setIsProfile(!isProfile);
                                 }, 200);
                             }}>
-                            <button className="profile-btn hover:text-white">
+                            <button className="profile-btn hover:text-white cursor-none">
                                 <img className="w-[16px] h-[16px] " src="/assets/gmail.png" alt="" />
                                 <span>SEND ME EMAIL</span>
                             </button>
                         </li>
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
+                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white" onClick={() => {
                             setIsSocial(false); setTimeout(() => {
                                 setIsProfile(!isProfile);
                             }, 200);
                         }}>
-                            <button className="profile-btn hover:text-white">
+                            <button className="profile-btn hover:text-white cursor-none">
                                 <img className="w-[16px] h-[16px] " src="/assets/social.png" alt="" />
                                 <span>GET MY SOCIAL</span>
                             </button>
                         </li>
 
                         {isSignedInGoogle || isSignedInGithub ? (
-                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
+                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white" onClick={() => {
                                 setIsSignOut(!isSignOut);
                                 setTimeout(() => {
                                     setIsProfile(!isProfile);
                                 }, 200);
                             }}>
-                                <button className="profile-btn hover:text-white">
+                                <button className="profile-btn hover:text-white cursor-none">
                                     <img className="w-[16px] h-[16px] " src="/assets/logout-new.png" alt="" />
                                     <span>LOGOUT</span>
                                 </button>
                             </li>
                         ) : (
-                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] cursor-pointer hover:border-white" onClick={() => {
+                            <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white" onClick={() => {
                                 setIsSign(!isSign);
                                 setTimeout(() => {
                                     setIsProfile(!isProfile);
                                 }, 200);
                             }}
                             >
-                                <button className="profile-btn hover:text-white">
+                                <button className="profile-btn hover:text-white cursor-none">
                                     <img className="w-[16px] h-[16px] " src="/assets/logout-new.png" alt="" />
                                     <span>SIGN-IN</span>
                                 </button>

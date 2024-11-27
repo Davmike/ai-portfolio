@@ -38,7 +38,7 @@ function SignOut() {
 
                 <div className="bg-[#1E222C] text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 absolute z-10">
                     <button
-                        className="absolute text-gray-400 top-4 right-4 hover:text-white"
+                        className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
                         onClick={() => setIsSignOut(!isSignOut)}
                     >
                         &times;
@@ -51,10 +51,10 @@ function SignOut() {
                         If you log out, you will need to sign in again to use the assistant.
                     </p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center">
+                        <button id="github" className="bg-gray-700 text-gray-300 outline-none border-none px-4 py-2 text-[15px] rounded-[5px] transition duration-200 flex items-center cursor-none">
                             <span className="font-semibold" id="acc" onClick={() => setIsSignOut(!isSignOut)}>CANCEL</span>
                         </button>
-                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px]" onClick={handleSignOut}>
+                        <button id="gmail" className="flex items-center px-4 py-2 outline-none border-none text-white text-[15px] transition duration-200 bg-red-600 rounded-[5px] cursor-none" onClick={handleSignOut}>
                             <span className="font-semibold" id="acc">SIGN OUT</span>
                         </button>
                     </div>

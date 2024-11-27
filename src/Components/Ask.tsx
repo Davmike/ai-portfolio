@@ -119,7 +119,7 @@ function Ask() {
                                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                                 }}
                             >
-                                <p className='text-[#BABABA] text-[12px]'
+                                <p className='text-[#BABABA] text-[12px] text-left'
                                     style={{
                                         wordWrap: 'break-word',
                                         whiteSpace: 'pre-wrap',

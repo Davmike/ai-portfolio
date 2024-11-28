@@ -19,8 +19,8 @@ function Header() {
                 {/* David's GPT Logo Text Section */}
                 <div
                     className="flex items-center p-2 space-x-2 transition-all duration-200 border border-transparent rounded"
-                    onMouseEnter={() => setHovered(true)} // When cursor enters this element
-                    onMouseLeave={() => setHovered(false)} // When cursor leaves this element
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
                 >
                     <img src="/assets/gpt.png" className="w-8 h-8 rounded-full" alt="" />
                     <h1 className="flex items-center space-x-1 text-[19px] font-semibold text-white">

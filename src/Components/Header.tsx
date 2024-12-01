@@ -18,7 +18,7 @@ function Header() {
             <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center mx-auto max-w-[800px] px-[20px]">
                 {/* David's GPT Logo Text Section */}
                 <div
-                    className="flex items-center p-2 space-x-2 transition-all duration-200 border border-transparent rounded"
+                    className="flex items-center p-2 space-x-2 transition-all duration-200 border border-transparent rounded hover-effect"
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                 >
@@ -31,7 +31,9 @@ function Header() {
                 </div>
 
                 {/* Sign in button and text */}
-                <div className="flex items-center ml-auto gap-[20px]">
+                <div className="flex items-center ml-auto gap-[20px]"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}>
                     {isSignedInGoogle || isSignedInGithub ? (
                         <>
                             <div className="border border-transparent rounded hover-effect p-[6px]" onClick={() => {

@@ -15,7 +15,8 @@ function Ask() {
         isSignedInGoogle,
         isSignedInGithub,
         isChatVisible,
-        setIsChatVisible
+        setIsChatVisible,
+        setHovered
     }: any = context;
 
     type Message = {
@@ -147,6 +148,8 @@ function Ask() {
             <div
                 className={`fixed bottom-0 left-1/2 transform -translate-x-1/2 text-gray-300 z-10 ${isFocused ? 'bg-black' : 'bg-black/30'
                     } backdrop-blur-md w-full max-w-[800px] rounded-tr-lg rounded-tl-lg flex items-center px-[20px] transition-colors duration-300`}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
             >
                 <textarea
                     ref={textareaRef}

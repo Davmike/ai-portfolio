@@ -21,12 +21,12 @@ const Cursor = () => {
 
     return (
         <div
-            className={`fixed z-10 transition-transform duration-300 ease-in-out bg-transparent border border-gray-500 rounded-full opacity-50 pointer-events-none ${hovered ? "w-[70px] h-[70px] scale-150" : "w-[50px] h-[50px]"
+            className={`fixed z-10 transition-transform duration-300 ease-in-out bg-[#2D2D2D] border-none border-gray-500 rounded-full opacity-50 pointer-events-none ${hovered ? "w-[70px] h-[70px] scale-180" : "w-[40px] h-[40px]"
                 }`}
             style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,
-                transform: `translate(-50%, -50%) ${hovered ? "scale(1.2)" : ""}`,
+                transform: `translate(-50%, -50%) ${hovered ? "scale(1.3)" : ""}`,
             }}
         />
 

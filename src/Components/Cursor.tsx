@@ -5,7 +5,6 @@ const Cursor = () => {
     const context = useContext(MyContext);
     const {
         hovered,
-
     }: any = context;
 
     const [position, setPosition] = useState({ x: 0, y: 0 });

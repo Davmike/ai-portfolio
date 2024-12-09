@@ -112,13 +112,7 @@ function Profile() {
                             </li>
                         )}
                     </ul>
-                    {/* logout button */}
-                    {/* <div className="flex items-center justify-end px-[16px]">
-                        <button className="flex items-center justify-end gap-1 text-[#4a4a4a] text-[11px] font-bold mt-[30px] hover:text-[white] logout-btn">
-                            <img className="w-[13px] h-[13px] " src="/assets/sign-out.png" alt="" />
-                            <span>LOGOUT</span>
-                        </button>
-                    </div> */}
+
                 </div>
             </div >
         )

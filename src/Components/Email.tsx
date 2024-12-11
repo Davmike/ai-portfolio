@@ -17,6 +17,7 @@ function Email() {
         isButtonDisabled,
         setIsButtonDisabled,
         setSuccessMessage,
+        setHovered
     }: any = context;
 
     // textarea size controler
@@ -104,6 +105,8 @@ function Email() {
                     <button
                         className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
                         onClick={() => setIsEmail(!isEmail)}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
                     >
                         &times;
                     </button>
@@ -115,7 +118,9 @@ function Email() {
                     {/* validation and inputs form */}
                     <form ref={form} onSubmit={sendEmail}>
                         {/* name input */}
-                        <div className="mb-4">
+                        <div className="mb-4"
+                            onMouseEnter={() => setHovered(true)}
+                            onMouseLeave={() => setHovered(false)}>
                             <label id="emailvalidation" htmlFor="title" className="block mb-2 text-lg font-medium">
                                 Your Name
                             </label>
@@ -136,7 +141,9 @@ function Email() {
                         </div>
 
                         {/* email input */}
-                        <div className="mb-4">
+                        <div className="mb-4"
+                            onMouseEnter={() => setHovered(true)}
+                            onMouseLeave={() => setHovered(false)}>
                             <label id="emailvalidation" htmlFor="email" className="block mb-2 text-lg font-medium">
                                 Your email
                             </label>
@@ -157,7 +164,9 @@ function Email() {
                         </div>
 
                         {/* message input */}
-                        <div className="mb-4">
+                        <div className="mb-4"
+                            onMouseEnter={() => setHovered(true)}
+                            onMouseLeave={() => setHovered(false)}>
                             <label id="emailvalidation" htmlFor="message" className="block mb-2 text-lg font-medium">
                                 Message
                             </label>
@@ -185,6 +194,8 @@ function Email() {
                             type="submit"
                             className="mt-[10px] border-none rounded-[4px] bg-[#F04D40] font-bold text-[1.15rem] px-[15px] py-[8px] cursor-none"
                             aria-disabled={isButtonDisabled}
+                            onMouseEnter={() => setHovered(true)}
+                            onMouseLeave={() => setHovered(false)}
                         >
                             SUBMIT
                         </button>

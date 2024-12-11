@@ -7,14 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    .bg-grid-pattern {
-      background-image: linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
-      background-size: 10px 10px;
-    }
-  }
-
 header {
     font-family: "Saira Condensed", sans-serif;
     font-weight: 500;

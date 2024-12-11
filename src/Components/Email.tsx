@@ -102,7 +102,7 @@ function Email() {
 
                 <div className="bg-[#1E222C] text-white rounded-lg shadow-lg w-[400px] max-w-[90%] p-6 relative z-10">
                     <button
-                        className="absolute text-gray-400 top-4 right-4 hover:text-white"
+                        className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
                         onClick={() => setIsEmail(!isEmail)}
                     >
                         &times;
@@ -124,7 +124,7 @@ function Email() {
                                 type="text"
                                 id="title"
                                 placeholder="What's your good name?"
-                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black focus:outline-none focus:ring-2 ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
+                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black focus:outline-none focus:ring-2 cursor-none ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
                                     }`}
                                 value={name}
                                 onChange={(e) => {
@@ -145,7 +145,7 @@ function Email() {
                                 type="text"
                                 id="email"
                                 placeholder="What's your email?"
-                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black focus:outline-none focus:ring-2 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
+                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black focus:outline-none focus:ring-2 cursor-none ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
                                     }`}
                                 value={validEmail}
                                 onChange={(e) => {
@@ -166,7 +166,7 @@ function Email() {
                                 name="message"
                                 id="message"
                                 placeholder="What you want to say?"
-                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black h-32 focus:outline-none focus:ring-2 resize-none ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
+                                className={`w-full bg-[#ffffff] border rounded-md p-2 text-black h-32 focus:outline-none focus:ring-2 resize-none cursor-none ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-[#F04D40]"
                                     }`}
                                 value={message}
                                 onInput={() => {
@@ -183,7 +183,7 @@ function Email() {
                         <button
                             id="gmail"
                             type="submit"
-                            className="mt-[10px] border-none rounded-[4px] bg-[#F04D40] cursor-pointer font-bold text-[1.15rem] px-[15px] py-[8px]"
+                            className="mt-[10px] border-none rounded-[4px] bg-[#F04D40] font-bold text-[1.15rem] px-[15px] py-[8px] cursor-none"
                             aria-disabled={isButtonDisabled}
                         >
                             SUBMIT

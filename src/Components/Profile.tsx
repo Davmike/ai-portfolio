@@ -14,7 +14,8 @@ function Profile() {
         isSign,
         setIsSocial,
         isEmail,
-        setIsEmail
+        setIsEmail,
+        setHovered
     }: any = context;
 
     return (
@@ -25,7 +26,9 @@ function Profile() {
                 <div className="bg-[#1E222C] bottom-0 text-white rounded-t-lg shadow-lg w-[480px] h-[460px] max-w-[90%] p-6 absolute z-10">
                     <button
                         className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
-                        onClick={() => setIsProfile(!isProfile)}>
+                        onClick={() => setIsProfile(!isProfile)}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}>
                         &times;
                     </button>
                     {/* this is david resume name and logo */}

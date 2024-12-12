@@ -18,6 +18,55 @@ function Profile() {
         setHovered
     }: any = context;
 
+    const menuItems = [
+        {
+            text: "RESTART CONVERSATION",
+            icon: "/assets/restart.png",
+            onClick: () => window.location.reload(),
+        },
+        {
+            text: "DOWNLOAD MY CV",
+            icon: "/assets/resume.png",
+            onClick: null,
+        },
+        {
+            text: "SEND ME EMAIL",
+            icon: "/assets/gmail.png",
+            onClick: () => {
+                setIsEmail(!isEmail);
+                setTimeout(() => setIsProfile(!isProfile), 200);
+            },
+        },
+        {
+            text: "GET MY SOCIAL",
+            icon: "/assets/social.png",
+            onClick: () => {
+                setIsSocial(false);
+                setTimeout(() => setIsProfile(!isProfile), 200);
+            },
+        },
+    ];
+
+    if (isSignedInGoogle || isSignedInGithub) {
+        menuItems.push({
+            text: "LOGOUT",
+            icon: "/assets/logout-new.png",
+            onClick: () => {
+                setIsSignOut(!isSignOut);
+                setTimeout(() => setIsProfile(!isProfile), 200);
+            },
+        });
+    } else {
+        menuItems.push({
+            text: "SIGN-IN",
+            icon: "/assets/logout-new.png",
+            onClick: () => {
+                setIsSign(!isSign);
+                setTimeout(() => setIsProfile(!isProfile), 200);
+            },
+        });
+    }
+
     return (
         !isProfile && (
             <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
@@ -53,8 +102,20 @@ function Profile() {
                     )}
 
                     {/* Menu List */}
-                    < ul className="space-y-1">
-                        <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white" onClick={() => window.location.reload()}>
+                    <ul className="space-y-1">
+                        {menuItems.map((item, index) => (
+                            <li
+                                key={index}
+                                className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white"
+                                onClick={item.onClick || undefined}
+                            >
+                                <button className="profile-btn hover:text-white cursor-none">
+                                    <img className="w-[16px] h-[16px]" src={item.icon} alt="" />
+                                    <span>{item.text}</span>
+                                </button>
+                            </li>
+                        ))}
+                        {/* <li className="flex items-center text-gray-400 transition duration-200 ease-in-out border-l-4 border-[#484848] hover:border-white" onClick={() => window.location.reload()}>
                             <button className="profile-btn hover:text-white cursor-none">
                                 <img className="w-[16px] h-[16px] " src="/assets/restart.png" alt="" />
                                 <span>RESTART CONVERSATION</span>
@@ -113,7 +174,7 @@ function Profile() {
                                     <span>SIGN-IN</span>
                                 </button>
                             </li>
-                        )}
+                        )} */}
                     </ul>
                 </div>
             </div >

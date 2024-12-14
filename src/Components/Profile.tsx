@@ -69,7 +69,7 @@ function Profile() {
 
     return (
         !isProfile && (
-            <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
+            <div className="fixed inset-0 z-10 flex items-center justify-center profile-slide" id="sign">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsProfile(!isProfile)}></div>
 
                 <div className="bg-[#1E222C] bottom-0 text-white rounded-t-lg shadow-lg w-[480px] h-[460px] max-w-[90%] p-6 absolute z-10">

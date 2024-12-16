@@ -179,5 +179,34 @@ body {
     }
 }
 
+/* Slide-in Animation */
+@keyframes slide-in {
+    from {
+      transform: translateY(150%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in {
+    animation: slide-in 1s forwards;
+  }
+  
+  /* Slide-out Animation */
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(150%);
+    }
+  }
+  
+  .slide-out {
+    animation: slide-out 1s backwards;
+  }
+  
+  
   
   

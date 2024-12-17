@@ -179,33 +179,19 @@ body {
     }
 }
 
-/* Slide-in Animation */
+/* .profile-slide{
+    animation-duration: 1s;
+    animation-name: slide-in;
+}
+
 @keyframes slide-in {
     from {
-      transform: translateY(150%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  
-  .slide-in {
-    animation: slide-in 1s forwards;
-  }
-  
-  /* Slide-out Animation */
-  @keyframes slide-out {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(150%);
-    }
-  }
-  
-  .slide-out {
-    animation: slide-out 1s backwards;
-  }
+        transform: translateY(150%);
+      }
+      to {
+        transform: translateY(0);
+      }
+  } */
   
   
   

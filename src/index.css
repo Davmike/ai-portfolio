@@ -179,7 +179,7 @@ body {
     }
 }
 
-/* .profile-slide{
+.profile-slide{
     animation-duration: 1s;
     animation-name: slide-in;
 }
@@ -191,7 +191,7 @@ body {
       to {
         transform: translateY(0);
       }
-  } */
+  }
   
   
   

@@ -184,7 +184,7 @@ body {
     animation-name: slide-in;
 }
 
-/* @keyframes slide-in {
+@keyframes slide-in {
     from {
         transform: translateY(150%);
       }
@@ -192,7 +192,7 @@ body {
         transform: translateY(0);
       }
   }
-   */
+  
   
   
   

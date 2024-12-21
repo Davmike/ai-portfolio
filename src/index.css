@@ -126,20 +126,6 @@ body {
     font-family: "Courier Prime", monospace;
 }
 
-
-/* texte typing styles */
-/* @keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
-
-.typing-text {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    animation: typing 3s steps(30) 1s forwards;
-} */
-
 /* this down below styles work for border hover animation */
 
 .hover-effect {

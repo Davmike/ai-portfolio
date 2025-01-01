@@ -170,7 +170,7 @@ body {
     }
 }
 
-/* .profile-slide{
+.profile-slide {
     animation-duration: 1s;
     animation-name: slide-in;
 }
@@ -178,8 +178,9 @@ body {
 @keyframes slide-in {
     from {
         transform: translateY(150%);
-      }
-      to {
+    }
+
+    to {
         transform: translateY(0);
-      }
-  } */
+    }
+}

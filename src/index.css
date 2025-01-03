@@ -170,17 +170,17 @@ body {
     }
 }
 
-.profile-slide {
-    animation-duration: 1s;
-    animation-name: slide-in;
-}
-
-@keyframes slide-in {
+@keyframes slideUp {
     from {
-        transform: translateY(150%);
+        transform: translateY(100%);
+        opacity: 0;
     }
-
     to {
         transform: translateY(0);
+        opacity: 1;
     }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
 }

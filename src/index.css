@@ -170,17 +170,33 @@ body {
     }
 }
 
-@keyframes slideUp {
+/* slide effect for profile component */
+
+@keyframes slide-up {
     from {
-        transform: translateY(100%);
-        opacity: 0;
+      transform: translateY(100%);
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
+  
+  @keyframes slide-down {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
 
-.slide-up {
-    animation: slideUp 0.5s ease-out;
-}
+  
+  @layer utilities {
+    .slide-up {
+      animation: slide-up 0.5s ease-out forwards;
+    }
+    .slide-down {
+      animation: slide-down 0.5s ease-out backwards;
+    }
+  }
+  

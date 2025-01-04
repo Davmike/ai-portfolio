@@ -71,7 +71,7 @@ function Profile() {
         !isProfile && (
             <div className="fixed inset-0 z-10 flex items-center justify-center" id="sign">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.1px] grayscale-[100%]" onClick={() => setIsProfile(!isProfile)}></div>
-                <div className="bg-[#1E222C] bottom-0 text-white rounded-t-lg shadow-lg w-[480px] h-[460px] max-w-[90%] p-6 absolute z-10">
+                <div className={`bg-[#1E222C] bottom-0 text-white rounded-t-lg shadow-lg w-[480px] h-[460px] max-w-[90%] p-6 absolute z-10 ${!isProfile ? "slide-up" : "slide-down"}`} >
                     <button
                         className="absolute text-gray-400 top-4 right-4 hover:text-white cursor-none"
                         onClick={() => setIsProfile(!isProfile)}
